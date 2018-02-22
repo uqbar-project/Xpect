@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xpect.util.URIDelegationHandler;
 
 import com.google.common.base.Joiner;
-import com.google.common.base.Objects;
+import com.google.common.base.MoreObjects;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -74,7 +74,7 @@ public class TestSuiteInfoRegistry implements ITestSuiteInfo.Registry {
 
 		@Override
 		public String toString() {
-			return Objects.toStringHelper(this).add("fileExtensions", fileExtensions).add("class", clazz).toString();
+			return MoreObjects.toStringHelper(this).add("fileExtensions", fileExtensions).add("class", clazz).toString();
 		}
 
 	}

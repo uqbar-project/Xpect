@@ -14,8 +14,6 @@ package org.eclipse.xpect.expectation.impl;
 import java.util.Collection;
 import java.util.List;
 
-import org.eclipse.xtext.util.Pair;
-import org.junit.ComparisonFailure;
 import org.eclipse.xpect.XpectArgument;
 import org.eclipse.xpect.XpectImport;
 import org.eclipse.xpect.expectation.CommaSeparatedValuesExpectation;
@@ -26,9 +24,11 @@ import org.eclipse.xpect.setup.XpectSetupFactory;
 import org.eclipse.xpect.state.Creates;
 import org.eclipse.xpect.text.Text;
 import org.eclipse.xpect.util.ReflectionUtil;
+import org.eclipse.xtext.util.Pair;
+import org.junit.ComparisonFailure;
 
-import com.google.common.base.Objects;
-import com.google.common.base.Objects.ToStringHelper;
+import com.google.common.base.MoreObjects;
+import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.base.Predicate;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -59,7 +59,7 @@ public class CommaSeparatedValuesExpectationImpl extends AbstractExpectation imp
 
 		@Override
 		public String toString() {
-			ToStringHelper helper = Objects.toStringHelper(ICommaSeparatedValuesExpectation.Value.class);
+			ToStringHelper helper = MoreObjects.toStringHelper(ICommaSeparatedValuesExpectation.Value.class);
 			helper.add("text", getText()).add("negated", isNegated()).add("wildcard", isWildcard());
 			return helper.toString();
 		}

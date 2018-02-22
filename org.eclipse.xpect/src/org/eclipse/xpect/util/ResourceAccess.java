@@ -21,11 +21,11 @@ import java.util.jar.JarFile;
 
 import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.xtext.util.Strings;
 import org.eclipse.xpect.util.IBundleInfo.Context;
+import org.eclipse.xtext.util.Strings;
 
-import com.google.common.base.Objects;
-import com.google.common.base.Objects.ToStringHelper;
+import com.google.common.base.MoreObjects;
+import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Lists;
 
@@ -77,7 +77,7 @@ public class ResourceAccess {
 
 		@Override
 		public String toString() {
-			return Objects.toStringHelper(this).add("location", location.toString()).toString();
+			return MoreObjects.toStringHelper(this).add("location", location.toString()).toString();
 		}
 
 	}
@@ -108,7 +108,7 @@ public class ResourceAccess {
 
 		@Override
 		public String toString() {
-			return Objects.toStringHelper(this).add("location", location.toString()).toString();
+			return MoreObjects.toStringHelper(this).add("location", location.toString()).toString();
 		}
 
 	}
@@ -165,7 +165,7 @@ public class ResourceAccess {
 
 		@Override
 		public String toString() {
-			ToStringHelper helper = Objects.toStringHelper(this);
+			ToStringHelper helper = MoreObjects.toStringHelper(this);
 			helper.add("location", location.toString());
 			helper.add("classpath", output);
 			helper.add("source", sourceFolders);
